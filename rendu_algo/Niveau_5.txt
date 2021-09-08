@@ -1,0 +1,156 @@
+Output : Generate branches, a trunk and Christmas balls, as well as a star to make a Christmas tree.
+
+'''
+Star generation, input = number of empty spaces.
+'''
+
+PROCEDURE big_star():
+BEGIN
+
+VAR :
+    nb_spaces, a : integer;
+
+    nb_spaces <-- 10
+    a <-- " " * 16
+
+    print(" " * nb_spaces, "*", " " * 2, "*", " " * 2, "*") ;
+    print(" " * 12, "*", " " + "*" + " ", "*") ;
+    print(a + "*") ;
+    print(" " * nb_spaces, "* " * 6) ;
+    print(a + "*") ;
+    print(" " * 12, "*", " " + "|" + " ", "*") ;
+    print(" " * nb_spaces, "*", " " * 2, "|", " " * 2, "*") ;
+END
+
+
+'''
+Generating top branches module, input = number of blank space, number of starting "stars" (top of the module),
+number of branches (row of stars).
+'''
+
+PROCEDURE top_branches():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches : integer;
+
+    nb_spaces <-- 15 ;
+    stars_top <-- 1 ;
+    nb_branches <-- 4 ;
+
+    for i to range(nb_branches) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+        nb_spaces <-- nb_spaces - 1
+        stars_top <-- stars_top + 2
+    END
+END
+
+
+'''
+Generating middle branches module, input = number of blank space, number of starting "stars" (top of the module),
+number of branches (row of stars). 
+'''
+
+PROCEDURE mid_branches():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches : integer;
+
+    nb_spaces <-- 12 ;
+    stars_top <-- 7 ;
+    nb_branches <-- 3 ;
+
+    print(" " * 12, "0", "*" * 3, "0") ;
+
+    for i to range(nb_branches) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+        nb_spaces <-- nb_spaces - 2
+        stars_top <-- stars_top + 4
+    END
+END
+
+
+'''
+Generating bottom branches module, input = number of blank space, number of starting "stars" (top of the module),
+number of branches (row of stars). 
+'''
+
+PROCEDURE bot_branches():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches : integer;
+
+    nb_spaces <-- 10 ;
+    stars_top <-- 11 ;
+    nb_branches <-- 3 ;
+
+    print(" " * 8, "0 ", " " * 3 + "*" * 5, " " * 2, "0") ;
+
+    for i to range(nb_branches) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+        nb_spaces <-- nb_spaces - 3
+        stars_top <-- stars_top + 6
+    END
+END
+
+'''
+Generating garlands, input = number of blank space, height of the trunk (row of stars) and number of star for the trunk.
+'''
+
+PROCEDURE garlands():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, trunk_height : integer;
+
+    nb_spaces <-- 5
+    trunk_height <-- 1
+    star_top <-- 5
+
+    for i to range(trunk_height) do
+        print(" " * nb_spaces, "| " * 4 + "*" * star_top + " |" * 4) ;
+    END
+    
+    for i to range(trunk_height) do
+        print(" " * nb_spaces, "0 " * 4 + "*" * star_top + " 0" * 4) ;
+    END
+END
+
+
+'''
+Generating trunk shape, input = number of blank space, number of starting "stars" (top of the module),
+height of the trunk (row of stars). 
+'''
+
+PROCEDURE trunk_shape():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, trunk_height : integer;
+
+    nb_spaces <-- 13
+    star_top <-- 5
+    trunk_height <-- 1
+
+    for i to range(trunk_height) do
+        print(" " * nb_spaces, "*" * star_top) ;
+    END
+END
+
+
+'''
+function that call the other functions
+'''
+
+FONCTION main():
+BEGIN
+
+    big_star()
+    top_branches()
+    mid_branches()
+    bot_branches()
+    garlands()
+    trunk_shape()
+END

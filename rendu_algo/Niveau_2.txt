@@ -1,0 +1,104 @@
+Output : Generates branches and a trunk to make a Christmas tree.
+
+
+'''
+Generating top branches module, input = number of blank space, number of starting "stars" (top of the module),
+number of branches (row of stars).
+'''
+
+PROCEDURE top_branches():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches : integer;
+
+    nb_spaces <-- 15 ;
+    stars_top <-- 1 ;
+    nb_branches <-- 4 ;
+
+    for i to range(nb_branches) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+        nb_spaces <-- nb_spaces - 1
+        stars_top <-- stars_top + 2
+    END
+END
+
+
+'''
+Generating middle branches module, input = number of blank space, number of starting "stars" (top of the module),
+number of branches (row of stars). 
+'''
+
+PROCEDURE mid_branches():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches : integer;
+
+    nb_spaces <-- 14 ;
+    stars_top <-- 3 ;
+    nb_branches <-- 4 ;
+
+    for i to range(nb_branches) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+        nb_spaces <-- nb_spaces - 2
+        stars_top <-- stars_top + 4
+    END
+END
+
+
+'''
+Generating bottom branches module, input = number of blank space, number of starting "stars" (top of the module),
+number of branches (row of stars). 
+'''
+
+PROCEDURE bot_branches():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches : integer;
+
+    nb_spaces <-- 13 ;
+    stars_top <-- 5 ;
+    nb_branches <-- 4 ;
+
+    for i to range(nb_branches) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+        nb_spaces <-- nb_spaces - 3
+        stars_top <-- stars_top + 6
+    END
+END
+
+'''
+Generating Pole Shape module, input = number of blank space, number of starting "stars" (top of the module),
+the pole height (row of stars). 
+'''
+
+PROCEDURE trunk_shape():
+BEGIN
+
+VAR :
+    nb_spaces, stars_top, b_branches, pole_height : integer;
+
+    nb_spaces <-- 13 ;
+    stars_top <-- 5 ;
+    pole_height <-- 3 ;
+
+    for i to range(pole_height) do
+        print(" " * nb_spaces, "*" * stars_top) ;
+    END
+END
+
+
+'''
+function that call the other functions
+'''
+
+FONCTION main():
+BEGIN
+
+    top_branches()
+    mid_branches()
+    bot_branches()
+    trunk_shape()
+END
