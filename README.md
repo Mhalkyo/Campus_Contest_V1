@@ -1,4 +1,4 @@
-# ![Légende](https://i.goopics.net/klrmL.png) Campus Contest B1 Suitch IT
+# Campus Contest V1 Suitch IT
 
 ## 📜 Présentation du Campus Contest
 
