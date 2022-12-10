@@ -1,4 +1,4 @@
-# Campus Contest V1 Suitch IT
+# Campus Contest V1 Switch IT
 
 #### Travail original [ICI](https://github.com/MahelBerbudeau/campus_contest)
 
